@@ -7,7 +7,7 @@ int main()
     int screenWidth = 800;
     int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "navinha"); //nome na barra em cima do programa
+    InitWindow(screenWidth, screenHeight, "navinha"); //nome na barra
     
     SetTargetFPS(60); //configura o fps
 
