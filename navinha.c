@@ -8,7 +8,6 @@ int main()
     int screenHeight = 450;
 
     InitWindow(screenWidth, screenHeight, "navinha"); //nome na barra
-    
     SetTargetFPS(60); //configura o fps
 
     Vector2 posicaoNave = { (float)screenWidth/2, (float)screenHeight/2 };
@@ -30,8 +29,6 @@ int main()
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
-
-            DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
 
             DrawCircleV(posicaoNave, 10, MAROON);
 
