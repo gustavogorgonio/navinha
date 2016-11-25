@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "navinha_mover.c"
 
 int main()
 {
@@ -6,31 +7,31 @@ int main()
 
     int screenWidth = 800;
     int screenHeight = 450;
-
-    InitWindow(screenWidth, screenHeight, "navinha"); //nome na barra
-    SetTargetFPS(60); //configura o fps
+    //dimensões da janela
 
     Vector2 posicaoNave = { (float)screenWidth/2, (float)screenHeight/2 };
+    //inicialização da posição da nave, no caso, meio da tela
+
+    Vector2 *nav;
+    nav = &posicaoNave;
+    //ponteiro apontando para a posição da nave
+
+    InitWindow(screenWidth, screenHeight, "Star Treko"); //nome na barra
+    SetTargetFPS(60); //configura o fps
 
     // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
-    {
-        // Update
+    while (!WindowShouldClose()) {    // Detect window close button or ESC key
 
-        if (IsKeyDown(KEY_RIGHT)) posicaoNave.x += 4.0f;
-        if (IsKeyDown(KEY_LEFT)) posicaoNave.x -= 4.0f;
-        if (IsKeyDown(KEY_UP)) posicaoNave.y -= 4.0f;
-        if (IsKeyDown(KEY_DOWN)) posicaoNave.y += 4.0f;
-
-
+        navinha_mover(nav, posicaoNave); //move a nave
 
         // Draw
 
-        BeginDrawing();
+        BeginDrawing(); //essa parte também poderia estar modularizada, né?
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(BLACK); //background
 
-            DrawCircleV(posicaoNave, 10, MAROON);
+            DrawCircleV(posicaoNave, 10, DARKGRAY); //círculo da nave
+            //posicaoNave indica onde o círculo vai ser desenhado
 
         EndDrawing();
 
