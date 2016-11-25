@@ -22,7 +22,7 @@ int main()
     // Main game loop
     while (!WindowShouldClose()) {    // Detect window close button or ESC key
 
-        navinha_mover(nav); //move a nave
+        navinha_mover(nav, posicaoNave); //move a nave
 
         // Draw
 
