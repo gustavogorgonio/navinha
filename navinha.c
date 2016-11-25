@@ -25,9 +25,9 @@ int main()
 
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
+            ClearBackground(BLACK);
 
-            DrawCircleV(posicaoNave, 10, MAROON);
+            DrawCircleV(posicaoNave, 10, DARKGRAY);
 
         EndDrawing();
 
