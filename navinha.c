@@ -7,11 +7,14 @@ int main()
 
     int screenWidth = 800;
     int screenHeight = 450;
+    //dimensões da janela
 
     Vector2 posicaoNave = { (float)screenWidth/2, (float)screenHeight/2 };
+    //inicialização da posição da nave, no caso, meio da tela
 
     Vector2 *nav;
     nav = &posicaoNave;
+    //ponteiro apontando para a posição da nave
 
     InitWindow(screenWidth, screenHeight, "Star Treko"); //nome na barra
     SetTargetFPS(60); //configura o fps
@@ -23,11 +26,12 @@ int main()
 
         // Draw
 
-        BeginDrawing();
+        BeginDrawing(); //essa parte também poderia estar modularizada, né?
 
-            ClearBackground(BLACK);
+            ClearBackground(BLACK); //background
 
-            DrawCircleV(posicaoNave, 10, DARKGRAY);
+            DrawCircleV(posicaoNave, 10, DARKGRAY); //círculo da nave
+            //posicaoNave indica onde o círculo vai ser desenhado
 
         EndDrawing();
 
