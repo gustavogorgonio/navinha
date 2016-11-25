@@ -1,4 +1,6 @@
 #include "raylib.h"
+#include "navinha_mover.c"
+#include "navinha_mover.h"
 
 int main()
 {
@@ -7,22 +9,18 @@ int main()
     int screenWidth = 800;
     int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "navinha"); //nome na barra
-    SetTargetFPS(60); //configura o fps
-
     Vector2 posicaoNave = { (float)screenWidth/2, (float)screenHeight/2 };
 
+    Vector2 *nav;
+    nav = &posicaoNave;
+
+    InitWindow(screenWidth, screenHeight, "Star Treko"); //nome na barra
+    SetTargetFPS(60); //configura o fps
+
     // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
-    {
-        // Update
+    while (!WindowShouldClose()) {    // Detect window close button or ESC key
 
-        if (IsKeyDown(KEY_RIGHT)) posicaoNave.x += 4.0f;
-        if (IsKeyDown(KEY_LEFT)) posicaoNave.x -= 4.0f;
-        if (IsKeyDown(KEY_UP)) posicaoNave.y -= 4.0f;
-        if (IsKeyDown(KEY_DOWN)) posicaoNave.y += 4.0f;
-
-
+        navinha_mover(nav); //move a nave
 
         // Draw
 
