@@ -12,8 +12,7 @@ int main()
     Vector2 posicaoNave = { (float)screenWidth/2, (float)screenHeight/2 };
     //inicialização da posição da nave, no caso, meio da tela
 
-    Vector2 *nav;
-    nav = &posicaoNave;
+    Vector2 *nav = &posicaoNave;
     //ponteiro apontando para a posição da nave
 
     InitWindow(screenWidth, screenHeight, "Star Treko"); //nome na barra
