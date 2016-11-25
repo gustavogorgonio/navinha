@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include "navinha_mover.h"
 
 void navinha_mover (Vector2 *nav) {
 

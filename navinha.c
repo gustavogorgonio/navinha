@@ -1,6 +1,5 @@
 #include "raylib.h"
 #include "navinha_mover.c"
-#include "navinha_mover.h"
 
 int main()
 {
